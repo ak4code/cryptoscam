@@ -1,6 +1,18 @@
 import telebot
 import settings
+import re
 
+__crypta = ['bts', 'bitcoin', 'eth', 'ethereum', 'usdt', 'xrp', 'ripple', 'ton']
+def get_crypto_list(message):
+	crypto_list = []
+	massage_words = re.findall(r'\w+', message.text.lower())
+	specify_currency_message = f'Какая валюта вас интересует?'
+	for i in massage_words:
+		if i in __crypta:
+			crypto_list.append(i)
+		if crypto_list == []:
+			return bot.reply_to(message, specify_currency_message)
+	return crypto_list
 
 bot = telebot.TeleBot(settings.TELEGRAM_BOT_TOKEN, parse_mode='html')
 
