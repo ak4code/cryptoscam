@@ -1,6 +1,10 @@
+from environs import Env
 import telebot
 
 
+env = Env()
+env.read_env()
+env.str("SECRET_TOKEN") # => SOMETHING
 bot = telebot.TeleBot("secret_token", parse_mode='html')
 
 @bot.message_handler(commands=['start', 'help'])
