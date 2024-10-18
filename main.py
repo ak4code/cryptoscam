@@ -3,6 +3,7 @@ import settings
 import re
 
 __crypta = ['bts', 'bitcoin', 'eth', 'ethereum', 'usdt', 'xrp', 'ripple', 'ton']
+
 def get_crypto_list(message):
 	crypto_list = []
 	massage_words = re.findall(r'\w+', message.text.lower())
