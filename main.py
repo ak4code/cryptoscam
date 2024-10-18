@@ -1,7 +1,8 @@
 import telebot
+import settings
 
 
-bot = telebot.TeleBot("secret_token", parse_mode='html')
+bot = telebot.TeleBot(settings.TELEGRAM_BOT_TOKEN, parse_mode='html')
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
