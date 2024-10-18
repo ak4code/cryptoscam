@@ -1,4 +1,5 @@
 # После локального клонирования проекта измменить название на .env c заменой существующего файла
 # Токен и ключ можно запросить у администратора проекта
+
 TELEGRAM_BOT_TOKEN=your_telegram_bot_token
 CRYPTO_API_KEY=your_crypto_api_key
