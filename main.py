@@ -1,11 +1,8 @@
-from environs import Env
 import telebot
+from settings import TELEGRAM_BOT_TOKEN
 
 
-env = Env()
-env.read_env()
-env.str("SECRET_TOKEN") # => SOMETHING
-bot = telebot.TeleBot("secret_token", parse_mode='html')
+bot = telebot.TeleBot(TELEGRAM_BOT_TOKEN, parse_mode='html')
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
